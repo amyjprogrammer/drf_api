@@ -37,7 +37,10 @@ INSTALLED_APPS = [
 
     #third-party
     'rest_framework',
-    
+    'rest_framework.authtoken',
+    'rest_auth',
+
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -133,3 +136,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 from dotenv import load_dotenv
 load_dotenv()
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES':[
+        'rest_framework.authentication.TokenAuthentication'
+    ]
+}
